@@ -11,7 +11,7 @@ struct DessertResponse: Codable {
     let meals: [SimpleRecipe]
 }
 
-struct SimpleRecipe: Codable, Equatable {
+struct SimpleRecipe: Codable, Equatable, Identifiable {
     let id: String
     let name: String
     let thumbnail: String
