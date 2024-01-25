@@ -23,7 +23,7 @@ class DessertsViewModel: ObservableObject {
                 return
             }
             
-            desserts = response.meals
+            desserts = response.meals.sorted(by: { $0.name < $1.name })
         case .failure(_):
             break
         }
