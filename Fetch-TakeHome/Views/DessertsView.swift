@@ -14,7 +14,7 @@ struct DessertsView: View {
         NavigationStack {
             List(viewModel.desserts) { item in
                 NavigationLink {
-                    ContentView()
+                    DessertDetailView(viewModel: DessertDetailViewModel(recipeId: item.id))
                 } label: {
                     SimpleDessertRowView(recipe: item)
                 }

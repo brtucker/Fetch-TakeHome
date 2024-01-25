@@ -42,7 +42,7 @@ class Networker {
         let request = URLRequest(url: url)
         let session = URLSession.shared
         
-        let (data, response) = try await session.data(for: request)
+        let (data, _) = try await session.data(for: request)
         return .success(data)
     }
 }

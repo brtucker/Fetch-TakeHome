@@ -7,6 +7,7 @@
 
 import Foundation
 
+@MainActor
 class DessertsViewModel: ObservableObject {
     @Published var desserts = [SimpleRecipe]()
     private let networker = Networker()
@@ -23,7 +24,7 @@ class DessertsViewModel: ObservableObject {
             }
             
             desserts = response.meals
-        case .failure(let error):
+        case .failure(_):
             break
         }
     }
